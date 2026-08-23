@@ -24,6 +24,32 @@
   pointer-events: none;
 }
 
+.hero__bg-logo {
+  position: absolute;
+  right: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 65%;
+  max-width: 800px;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero__bg-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 992px) {
+  .hero__bg-logo {
+    opacity: 0.08;
+    width: 90%;
+    right: -20%;
+  }
+}
+
 .hero__glow {
   position: absolute;
   top: 20%;
