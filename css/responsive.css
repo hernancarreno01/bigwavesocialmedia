@@ -1,0 +1,276 @@
+/* ═══════════════════════════════════════════════════════════
+   BigWave — Responsive (responsive.css)
+   Mobile-first adjustments
+   ═══════════════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════
+   TABLET (max 1024px)
+   ══════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  /* Navbar → hamburger */
+  .navbar__menu {
+    display: none;
+  }
+
+  .navbar__cta.desktop-only {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Grid adjustments */
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+  /* Footer */
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+
+  /* Manifesto steps */
+  .manifesto__steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    max-width: 480px;
+  }
+
+  .manifesto__step:not(:last-child)::after {
+    display: none;
+  }
+
+  /* Flow / Disciplines */
+  .flow {
+    gap: var(--space-sm);
+  }
+
+  .flow__arrow {
+    font-size: var(--text-base);
+  }
+
+  /* Portfolio */
+  .portfolio__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Smart form fields */
+  .smart-form__fields {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero brands */
+  .hero__brands {
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+  }
+}
+
+
+/* ══════════════════════════════════
+   MOBILE (max 768px)
+   ══════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Section spacing */
+  .section {
+    padding-block: clamp(3rem, 2.5rem + 3vw, 5rem);
+  }
+
+  /* Grid → single column */
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100svh;
+    text-align: left;
+  }
+
+  .hero__content {
+    padding: var(--space-2xl) 0;
+  }
+
+  .hero__ctas {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .hero__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__scroll-hint {
+    display: none;
+  }
+
+  .hero__brands {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .hero__brand-divider {
+    display: none;
+  }
+
+  /* Section headers */
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  /* Service grid */
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dev-services {
+    grid-template-columns: 1fr;
+  }
+
+  /* Automation */
+  .automation__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Institutions */
+  .institutions__solutions {
+    grid-template-columns: 1fr;
+  }
+
+  /* Use cases */
+  .usecases__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Flow → vertical */
+  .flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .flow__arrow {
+    transform: rotate(90deg);
+    align-self: center;
+  }
+
+  .flow__item {
+    padding: var(--space-md);
+  }
+
+  /* Footer */
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  /* Chips in form */
+  .smart-form__chips {
+    gap: var(--space-sm);
+  }
+
+  .chip {
+    font-size: var(--text-xs);
+    padding: 0.6em 1em;
+  }
+
+  /* Trust */
+  .trust__logos {
+    gap: var(--space-xl);
+  }
+
+  .trust__testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  /* Technology */
+  .technology__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Steps */
+  .step {
+    gap: var(--space-md);
+  }
+
+  .step__number {
+    font-size: var(--text-2xl);
+    width: 40px;
+  }
+}
+
+
+/* ══════════════════════════════════
+   SMALL PHONES (max 480px)
+   ══════════════════════════════════ */
+
+@media (max-width: 480px) {
+  /* Even tighter spacing */
+  .card {
+    padding: var(--space-xl);
+  }
+
+  .usecase {
+    padding: var(--space-xl);
+  }
+
+  .portfolio-card__body {
+    padding: var(--space-xl);
+  }
+
+  .portfolio-card__metrics {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  /* Buttons full width */
+  .btn--lg {
+    padding: 0.85em 1.8em;
+    font-size: var(--text-base);
+  }
+
+  /* Brands stacked smaller */
+  .hero__brand img {
+    height: 26px;
+  }
+}
+
+
+/* ══════════════════════════════════
+   LARGE SCREENS (min 1440px)
+   ══════════════════════════════════ */
+
+@media (min-width: 1440px) {
+  .hero__content {
+    max-width: 860px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ══════════════════════════════════
+   VERY LARGE SCREENS (min 1920px)
+   ══════════════════════════════════ */
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+}

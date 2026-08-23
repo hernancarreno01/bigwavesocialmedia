@@ -1,0 +1,153 @@
+/* ═══════════════════════════════════════════════════════════
+   BigWave — Layout (layout.css)
+   Containers, grid systems, spacing utilities
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+.container--wide {
+  max-width: var(--container-wide);
+}
+
+.container--mid {
+  max-width: var(--container-mid);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+/* ── Section spacing ── */
+.section {
+  padding-block: var(--space-section);
+  position: relative;
+  overflow: hidden;
+}
+
+.section--compact {
+  padding-block: clamp(2.5rem, 2rem + 3vw, 5rem);
+}
+
+/* ── Section Header (title + subtitle) ── */
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 2rem + 3vw, 4rem);
+  max-width: 780px;
+  margin-inline: auto;
+}
+
+.section-header .section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-lg);
+}
+
+.section-header .section-label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--cyan);
+  border-radius: 1px;
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.section-header p {
+  font-size: var(--text-lg);
+  color: var(--slate);
+  margin-inline: auto;
+}
+
+.theme-dark .section-header p {
+  color: rgba(255,255,255,0.6);
+}
+
+/* ── Grid Systems ── */
+.grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.grid-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ── Flex utilities ── */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+.gap-xl { gap: var(--space-xl); }
+.gap-2xl { gap: var(--space-2xl); }
+
+/* ── Text alignment ── */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+
+/* ── Margin helpers ── */
+.mx-auto { margin-inline: auto; }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+.mb-2xl { margin-bottom: var(--space-2xl); }
+.mb-3xl { margin-bottom: var(--space-3xl); }
+
+/* ── Dividers ── */
+.divider {
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-cta);
+  border: none;
+  border-radius: 2px;
+}
+
+.divider--center {
+  margin-inline: auto;
+}
+
+/* ── Wave section separator (SVG background) ── */
+.wave-separator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  pointer-events: none;
+}
+
+.wave-separator--top {
+  bottom: auto;
+  top: 0;
+  transform: rotate(180deg);
+}

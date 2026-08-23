@@ -1,0 +1,181 @@
+/* ═══════════════════════════════════════════════════════════
+   BigWave — Base Styles (base.css)
+   Reset, typography, global elements
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Modern Reset ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: var(--nav-height);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--charcoal);
+  background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Skip to content (a11y) ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--cyan);
+  color: var(--white);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  z-index: var(--z-toast);
+  transition: top var(--duration-fast) var(--ease-out);
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: var(--space-md);
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--charcoal);
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: var(--text-5xl); font-weight: 800; }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); font-weight: 600; }
+h6 { font-size: var(--text-base); font-weight: 600; }
+
+p {
+  margin-bottom: var(--space-md);
+  max-width: 72ch;
+}
+
+p:last-child { margin-bottom: 0; }
+
+.text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+}
+
+/* ── Links ── */
+a {
+  color: var(--tech-blue);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--cyan);
+}
+
+/* ── Focus styles (a11y) ── */
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Lists ── */
+ul, ol {
+  list-style: none;
+}
+
+/* ── Images ── */
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img {
+  loading: lazy;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(0, 188, 212, 0.25);
+  color: var(--charcoal);
+}
+
+/* ── Scrollbar (webkit) ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--deep-navy);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dark-blue);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Utility: section dark theme ── */
+.theme-dark {
+  color: rgba(255, 255, 255, 0.87);
+}
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark h4,
+.theme-dark h5,
+.theme-dark h6 {
+  color: var(--white);
+}
+.theme-dark p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ── Utility: screen reader only ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

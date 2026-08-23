@@ -1,0 +1,130 @@
+/* ═══════════════════════════════════════════════════════════
+   BigWave — Design Tokens (variables.css)
+   Extracted from brand logos + extended for UI
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Blues: Deep (dark backgrounds) ── */
+  --deep-navy:      #0A1628;
+  --navy:           #0A2647;
+  --dark-blue:      #144272;
+  --midnight:       #0D1B2A;
+
+  /* ── Blues: Tech (actions, accents) ── */
+  --tech-blue:      #1565C0;
+  --ocean-blue:     #1976D2;
+  --steel-blue:     #6B8DB5;
+
+  /* ── Cyan / Turquoise (BigWave identity) ── */
+  --cyan:           #00BCD4;
+  --cyan-bright:    #26C6DA;
+  --light-blue:     #5BBFCF;
+  --sky:            #8DD8E5;
+
+  /* ── Teal / Mint (growth, success) ── */
+  --teal:           #2DC8A8;
+  --mint:           #48D1A5;
+
+  /* ── Neutrals ── */
+  --white:          #FFFFFF;
+  --ghost:          #F8FAFC;
+  --off-white:      #F1F5F9;
+  --light-gray:     #E2E8F0;
+  --border-light:   #CBD5E1;
+  --mid-gray:       #94A3B8;
+  --slate:          #64748B;
+  --graphite:       #475569;
+  --charcoal:       #1E293B;
+  --black:          #0F172A;
+
+  /* ── Gradients ── */
+  --gradient-wave:        linear-gradient(135deg, #0A2647 0%, #144272 40%, #00BCD4 100%);
+  --gradient-ocean:       linear-gradient(180deg, #0A1628 0%, #0A2647 40%, #144272 100%);
+  --gradient-hero:        linear-gradient(160deg, #0A1628 0%, #0D1B2A 30%, #0A2647 60%, #144272 100%);
+  --gradient-glow:        radial-gradient(ellipse at 50% 30%, rgba(0,188,212,0.12) 0%, transparent 70%);
+  --gradient-glow-teal:   radial-gradient(ellipse at 50% 50%, rgba(45,200,168,0.10) 0%, transparent 60%);
+  --gradient-card-dark:   linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+  --gradient-card-light:  linear-gradient(145deg, rgba(0,188,212,0.04) 0%, rgba(20,66,114,0.02) 100%);
+  --gradient-cta:         linear-gradient(135deg, #00BCD4 0%, #1565C0 100%);
+  --gradient-cta-hover:   linear-gradient(135deg, #26C6DA 0%, #1976D2 100%);
+  --gradient-text:        linear-gradient(135deg, #00BCD4, #2DC8A8);
+  --gradient-section-alt: linear-gradient(180deg, var(--ghost) 0%, var(--white) 100%);
+
+  /* ── Shadows ── */
+  --shadow-sm:       0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:       0 4px 12px rgba(0,0,0,0.10);
+  --shadow-lg:       0 8px 30px rgba(0,0,0,0.12);
+  --shadow-xl:       0 16px 50px rgba(0,0,0,0.16);
+  --shadow-glow:     0 0 30px rgba(0,188,212,0.20);
+  --shadow-glow-lg:  0 0 60px rgba(0,188,212,0.25);
+  --shadow-card:     0 4px 20px rgba(10,38,71,0.08);
+  --shadow-card-hover: 0 8px 40px rgba(0,188,212,0.15);
+
+  /* ── Typography ── */
+  --font-heading:    'Outfit', sans-serif;
+  --font-body:       'Inter', sans-serif;
+  --font-mono:       'JetBrains Mono', monospace;
+
+  /* ── Font Sizes (fluid clamp) ── */
+  --text-xs:     clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
+  --text-sm:     clamp(0.8125rem, 0.77rem + 0.25vw, 0.875rem);
+  --text-base:   clamp(0.9375rem, 0.88rem + 0.3vw, 1.0625rem);
+  --text-lg:     clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);
+  --text-xl:     clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  --text-2xl:    clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+  --text-3xl:    clamp(1.875rem, 1.5rem + 1.2vw, 2.5rem);
+  --text-4xl:    clamp(2.25rem, 1.8rem + 1.8vw, 3.25rem);
+  --text-5xl:    clamp(2.75rem, 2rem + 2.5vw, 4.5rem);
+  --text-display: clamp(3rem, 2.2rem + 3vw, 5.5rem);
+
+  /* ── Spacing ── */
+  --space-xs:    0.25rem;
+  --space-sm:    0.5rem;
+  --space-md:    1rem;
+  --space-lg:    1.5rem;
+  --space-xl:    2rem;
+  --space-2xl:   3rem;
+  --space-3xl:   4rem;
+  --space-4xl:   6rem;
+  --space-5xl:   8rem;
+  --space-section: clamp(4rem, 3rem + 5vw, 8rem);
+
+  /* ── Border Radius ── */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
+  --radius-full: 9999px;
+
+  /* ── Transitions ── */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:   150ms;
+  --duration-normal: 300ms;
+  --duration-slow:   500ms;
+  --duration-reveal: 800ms;
+
+  /* ── Z-Index Scale ── */
+  --z-base:     1;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+
+  /* ── Layout ── */
+  --container-max:  1400px;
+  --container-wide: 1200px;
+  --container-mid:  960px;
+  --container-narrow: 720px;
+  --nav-height:     72px;
+
+  /* ── Glass ── */
+  --glass-bg:        rgba(255,255,255,0.05);
+  --glass-bg-light:  rgba(255,255,255,0.70);
+  --glass-border:    rgba(255,255,255,0.08);
+  --glass-border-light: rgba(0,0,0,0.06);
+  --glass-blur:      20px;
+}
