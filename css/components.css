@@ -159,6 +159,12 @@
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .card {
+    padding: var(--space-md);
+  }
+}
+
 .card:hover {
   transform: translateY(-4px);
   border-color: rgba(0,188,212,0.2);
@@ -201,7 +207,7 @@
   font-family: var(--font-heading);
   font-size: var(--text-lg);
   font-weight: 700;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
 }
 
 .theme-dark .card__title {
