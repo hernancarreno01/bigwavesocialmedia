@@ -157,3 +157,14 @@
   top: 0;
   transform: rotate(180deg);
 }
+
+/* ── Mobile Scroll Snapping ── */
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+  section, .hero, .footer {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+}
