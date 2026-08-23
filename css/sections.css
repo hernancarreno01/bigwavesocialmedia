@@ -945,44 +945,32 @@
 
 .footer__social {
   display: flex;
+  align-items: center;
   gap: var(--space-md);
 }
 
-.footer__social a {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.9rem;
-  transition:
-    border-color var(--duration-fast),
-    color var(--duration-fast),
-    background var(--duration-fast);
-  text-decoration: none;
-}
-
-.footer__social a:hover {
-  border-color: var(--cyan);
-  color: var(--cyan);
-  background: rgba(0, 188, 212, 0.08);
-}
-
-.footer__closing {
-  text-align: center;
-  margin-top: var(--space-2xl);
-  padding-top: var(--space-xl);
-}
-
-.footer__closing-phrase {
+.footer__phrase {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: var(--text-sm);
   font-weight: 700;
   background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  transition:
+    color var(--duration-fast),
+    transform var(--duration-fast);
+  text-decoration: none;
+}
+
+.footer__social a:hover {
+  color: var(--cyan);
+  transform: scale(1.1);
 }
