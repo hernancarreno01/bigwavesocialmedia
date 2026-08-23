@@ -37,7 +37,7 @@
 /* ── Section Header (title + subtitle) ── */
 .section-header {
   text-align: center;
-  margin-bottom: clamp(2.5rem, 2rem + 3vw, 4rem);
+  margin-bottom: clamp(1.5rem, 1rem + 2vw, 2.5rem);
   max-width: 780px;
   margin-inline: auto;
 }
@@ -52,7 +52,7 @@
   color: var(--cyan);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .section-header .section-label::before {
@@ -65,7 +65,7 @@
 }
 
 .section-header h2 {
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .section-header p {

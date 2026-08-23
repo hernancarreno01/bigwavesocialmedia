@@ -151,7 +151,7 @@
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-2xl);
+  padding: var(--space-lg);
   transition:
     transform var(--duration-normal) var(--ease-out),
     box-shadow var(--duration-normal) var(--ease-out),
@@ -180,14 +180,14 @@
 
 /* ── Card icon circle ── */
 .card__icon {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: var(--space-lg);
+  font-size: 1.25rem;
+  margin-bottom: var(--space-md);
   background: rgba(0,188,212,0.1);
   color: var(--cyan);
   flex-shrink: 0;
