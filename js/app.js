@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Scroll Animations ──
   new ScrollAnimations();
+  new KeyboardNavigation();
 
   // ── Smart Form ──
   new SmartForm();

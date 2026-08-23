@@ -122,3 +122,70 @@ class ScrollAnimations {
     this.observers.forEach(obs => obs.disconnect());
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   Keyboard Navigation (Arrow Keys)
+   ═══════════════════════════════════════════════════════════ */
+class KeyboardNavigation {
+  constructor() {
+    this.sections = Array.from(document.querySelectorAll('section, .hero, .footer'));
+    this.isScrolling = false;
+    this.init();
+  }
+
+  init() {
+    window.addEventListener('keydown', (e) => {
+      // Ignore if user is typing in form inputs
+      if (['input', 'textarea'].includes(e.target.tagName.toLowerCase())) return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        this.scrollToNext();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        this.scrollToPrev();
+      }
+    }, { passive: false });
+  }
+
+  getCurrentSectionIndex() {
+    const scrollY = window.scrollY;
+    const offset = 150; // allow some margin
+    for (let i = this.sections.length - 1; i >= 0; i--) {
+      if (scrollY >= this.sections[i].offsetTop - offset) {
+        return i;
+      }
+    }
+    return 0;
+  }
+
+  scrollToNext() {
+    if (this.isScrolling) return;
+    const currentIndex = this.getCurrentSectionIndex();
+    if (currentIndex < this.sections.length - 1) {
+      this.scrollTo(this.sections[currentIndex + 1]);
+    }
+  }
+
+  scrollToPrev() {
+    if (this.isScrolling) return;
+    const currentIndex = this.getCurrentSectionIndex();
+    
+    // Si ya estamos muy pasados del inicio de la sección, subir al inicio de la misma
+    if (window.scrollY > this.sections[currentIndex].offsetTop + 50) {
+      this.scrollTo(this.sections[currentIndex]);
+    } else if (currentIndex > 0) {
+      this.scrollTo(this.sections[currentIndex - 1]);
+    }
+  }
+
+  scrollTo(element) {
+    this.isScrolling = true;
+    element.scrollIntoView({ behavior: 'smooth' });
+    
+    // Unlock after animation finishes
+    setTimeout(() => {
+      this.isScrolling = false;
+    }, 700);
+  }
+}
