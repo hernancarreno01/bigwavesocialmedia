@@ -30,7 +30,7 @@
   top: 50%;
   transform: translateY(-50%);
   width: 65%;
-  max-width: 800px;
+  max-width: 600px;
   opacity: 0.15;
   z-index: 0;
   pointer-events: none;
