@@ -951,7 +951,7 @@
 
 .footer__phrase {
   font-family: var(--font-heading);
-  font-size: var(--text-sm);
+  font-size: var(--text-lg);
   font-weight: 700;
   background: var(--gradient-text);
   -webkit-background-clip: text;
